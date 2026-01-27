@@ -1,0 +1,814 @@
+{
+  "metadata": {
+    "start_time": "2026-01-27T23:00:15.197532",
+    "log_version": "1.0"
+  },
+  "logs": [
+    {
+      "day": 0,
+      "stores": {
+        "store_1": {
+          "state": {
+            "store_id": "store_1",
+            "sku_id": "SKU_001",
+            "inventory": 700,
+            "forecast": 50.0,
+            "demand_std": 10.0,
+            "reorder_point": 123.33452377915607,
+            "safety_stock": 23.33452377915607,
+            "lead_time": 2,
+            "z_score": 1.65,
+            "days_of_cover": 14
+          },
+          "action": {
+            "order_quantity": 0,
+            "order_placed": false
+          }
+        },
+        "store_2": {
+          "state": {
+            "store_id": "store_2",
+            "sku_id": "SKU_001",
+            "inventory": 600,
+            "forecast": 50.0,
+            "demand_std": 10.0,
+            "reorder_point": 123.33452377915607,
+            "safety_stock": 23.33452377915607,
+            "lead_time": 2,
+            "z_score": 1.65,
+            "days_of_cover": 14
+          },
+          "action": {
+            "order_quantity": 0,
+            "order_placed": false
+          }
+        },
+        "store_3": {
+          "state": {
+            "store_id": "store_3",
+            "sku_id": "SKU_001",
+            "inventory": 900,
+            "forecast": 50.0,
+            "demand_std": 10.0,
+            "reorder_point": 123.33452377915607,
+            "safety_stock": 23.33452377915607,
+            "lead_time": 2,
+            "z_score": 1.65,
+            "days_of_cover": 14
+          },
+          "action": {
+            "order_quantity": 0,
+            "order_placed": false
+          }
+        }
+      },
+      "warehouses": {
+        "warehouse_1": {
+          "state": {
+            "warehouse_id": "warehouse_1",
+            "sku_id": "SKU_001",
+            "inventory": 5000,
+            "in_transit": 0.0,
+            "backorders": 0.0,
+            "inventory_position": 5000.0,
+            "forecast": 150.0,
+            "demand_std": 30.0,
+            "reorder_point": 1205.570177090598,
+            "safety_stock": 155.57017709059792,
+            "lead_time": 7,
+            "z_score": 1.96,
+            "days_of_cover": 30
+          },
+          "action": {
+            "order_quantity": 0,
+            "order_placed": false
+          }
+        }
+      },
+      "outcomes": {
+        "actual_demand": 0.0,
+        "sales": 0,
+        "lost_sales": 0.0
+      },
+      "metrics": {
+        "total_days": 0,
+        "avg_service_level": 0.0,
+        "avg_fill_rate": 0.0,
+        "total_cost": 0.0,
+        "avg_daily_cost": 0.0,
+        "total_demand": 0.0,
+        "total_lost_sales": 0.0,
+        "avg_inventory": 0.0
+      }
+    },
+    {
+      "day": 1,
+      "stores": {
+        "store_1": {
+          "state": {
+            "store_id": "store_1",
+            "sku_id": "SKU_001",
+            "inventory": 670.8357635374202,
+            "forecast": 50.0,
+            "demand_std": 10.0,
+            "reorder_point": 123.33452377915607,
+            "safety_stock": 23.33452377915607,
+            "lead_time": 2,
+            "z_score": 1.65,
+            "days_of_cover": 14
+          },
+          "action": {
+            "order_quantity": 0,
+            "order_placed": false
+          }
+        },
+        "store_2": {
+          "state": {
+            "store_id": "store_2",
+            "sku_id": "SKU_001",
+            "inventory": 561.55210213285,
+            "forecast": 50.0,
+            "demand_std": 10.0,
+            "reorder_point": 123.33452377915607,
+            "safety_stock": 23.33452377915607,
+            "lead_time": 2,
+            "z_score": 1.65,
+            "days_of_cover": 14
+          },
+          "action": {
+            "order_quantity": 0,
+            "order_placed": false
+          }
+        },
+        "store_3": {
+          "state": {
+            "store_id": "store_3",
+            "sku_id": "SKU_001",
+            "inventory": 815.8338178896929,
+            "forecast": 50.0,
+            "demand_std": 10.0,
+            "reorder_point": 123.33452377915607,
+            "safety_stock": 23.33452377915607,
+            "lead_time": 2,
+            "z_score": 1.65,
+            "days_of_cover": 14
+          },
+          "action": {
+            "order_quantity": 0,
+            "order_placed": false
+          }
+        }
+      },
+      "warehouses": {
+        "warehouse_1": {
+          "state": {
+            "warehouse_id": "warehouse_1",
+            "sku_id": "SKU_001",
+            "inventory": 5000,
+            "in_transit": 0.0,
+            "backorders": 0.0,
+            "inventory_position": 5000.0,
+            "forecast": 150.0,
+            "demand_std": 30.0,
+            "reorder_point": 1205.570177090598,
+            "safety_stock": 155.57017709059792,
+            "lead_time": 7,
+            "z_score": 1.96,
+            "days_of_cover": 30
+          },
+          "action": {
+            "order_quantity": 0,
+            "order_placed": false
+          }
+        }
+      },
+      "outcomes": {
+        "actual_demand": 0.0,
+        "sales": 0,
+        "lost_sales": 0.0
+      },
+      "metrics": {
+        "total_days": 0,
+        "avg_service_level": 0.0,
+        "avg_fill_rate": 0.0,
+        "total_cost": 0.0,
+        "avg_daily_cost": 0.0,
+        "total_demand": 0.0,
+        "total_lost_sales": 0.0,
+        "avg_inventory": 0.0
+      }
+    },
+    {
+      "day": 2,
+      "stores": {
+        "store_1": {
+          "state": {
+            "store_id": "store_1",
+            "sku_id": "SKU_001",
+            "inventory": 589.7184809521815,
+            "forecast": 14.582118231289874,
+            "demand_std": 14.582118231289874,
+            "reorder_point": 63.19091492442962,
+            "safety_stock": 34.026678461849876,
+            "lead_time": 2,
+            "z_score": 1.65,
+            "days_of_cover": 14
+          },
+          "action": {
+            "order_quantity": 0,
+            "order_placed": false
+          }
+        },
+        "store_2": {
+          "state": {
+            "store_id": "store_2",
+            "sku_id": "SKU_001",
+            "inventory": 504.86544054721116,
+            "forecast": 19.223948933575016,
+            "demand_std": 19.223948933575016,
+            "reorder_point": 83.30606721912885,
+            "safety_stock": 44.858169351978816,
+            "lead_time": 2,
+            "z_score": 1.65,
+            "days_of_cover": 14
+          },
+          "action": {
+            "order_quantity": 0,
+            "order_placed": false
+          }
+        },
+        "store_3": {
+          "state": {
+            "store_id": "store_3",
+            "sku_id": "SKU_001",
+            "inventory": 735.9744284925151,
+            "forecast": 42.08309105515356,
+            "demand_std": 42.08309105515356,
+            "reorder_point": 182.36507100299417,
+            "safety_stock": 98.19888889268707,
+            "lead_time": 2,
+            "z_score": 1.65,
+            "days_of_cover": 14
+          },
+          "action": {
+            "order_quantity": 0,
+            "order_placed": false
+          }
+        }
+      },
+      "warehouses": {
+        "warehouse_1": {
+          "state": {
+            "warehouse_id": "warehouse_1",
+            "sku_id": "SKU_001",
+            "inventory": 5000,
+            "in_transit": 0.0,
+            "backorders": 0.0,
+            "inventory_position": 5000.0,
+            "forecast": 75.88915822001846,
+            "demand_std": 75.88915822001846,
+            "reorder_point": 924.7604336582851,
+            "safety_stock": 393.5363261181559,
+            "lead_time": 7,
+            "z_score": 1.96,
+            "days_of_cover": 30
+          },
+          "action": {
+            "order_quantity": 0,
+            "order_placed": false
+          }
+        }
+      },
+      "outcomes": {
+        "actual_demand": 0.0,
+        "sales": 0,
+        "lost_sales": 0.0
+      },
+      "metrics": {
+        "total_days": 0,
+        "avg_service_level": 0.0,
+        "avg_fill_rate": 0.0,
+        "total_cost": 0.0,
+        "avg_daily_cost": 0.0,
+        "total_demand": 0.0,
+        "total_lost_sales": 0.0,
+        "avg_inventory": 0.0
+      }
+    },
+    {
+      "day": 3,
+      "stores": {
+        "store_1": {
+          "state": {
+            "store_id": "store_1",
+            "sku_id": "SKU_001",
+            "inventory": 514.6930162238324,
+            "forecast": 36.76050634927284,
+            "demand_std": 33.548779119832666,
+            "reorder_point": 151.80549111188466,
+            "safety_stock": 78.28447841333899,
+            "lead_time": 2,
+            "z_score": 1.65,
+            "days_of_cover": 14
+          },
+          "action": {
+            "order_quantity": 0,
+            "order_placed": false
+          }
+        },
+        "store_2": {
+          "state": {
+            "store_id": "store_2",
+            "sku_id": "SKU_001",
+            "inventory": 440.22100583744117,
+            "forecast": 31.711519817596297,
+            "demand_std": 23.627363971337246,
+            "reorder_point": 118.55636827798703,
+            "safety_stock": 55.13332864279444,
+            "lead_time": 2,
+            "z_score": 1.65,
+            "days_of_cover": 14
+          },
+          "action": {
+            "order_quantity": 0,
+            "order_placed": false
+          }
+        },
+        "store_3": {
+          "state": {
+            "store_id": "store_3",
+            "sku_id": "SKU_001",
+            "inventory": 622.229315531953,
+            "forecast": 54.67519050249498,
+            "demand_std": 38.70115810697447,
+            "reorder_point": 199.6576904177974,
+            "safety_stock": 90.30730941280744,
+            "lead_time": 2,
+            "z_score": 1.65,
+            "days_of_cover": 14
+          },
+          "action": {
+            "order_quantity": 0,
+            "order_placed": false
+          }
+        }
+      },
+      "warehouses": {
+        "warehouse_1": {
+          "state": {
+            "warehouse_id": "warehouse_1",
+            "sku_id": "SKU_001",
+            "inventory": 5000,
+            "in_transit": 0.0,
+            "backorders": 0.0,
+            "inventory_position": 5000.0,
+            "forecast": 123.14721666936411,
+            "demand_std": 91.1377587338651,
+            "reorder_point": 1334.6410922144682,
+            "safety_stock": 472.6105755289194,
+            "lead_time": 7,
+            "z_score": 1.96,
+            "days_of_cover": 30
+          },
+          "action": {
+            "order_quantity": 0,
+            "order_placed": false
+          }
+        }
+      },
+      "outcomes": {
+        "actual_demand": 0.0,
+        "sales": 0,
+        "lost_sales": 0.0
+      },
+      "metrics": {
+        "total_days": 0,
+        "avg_service_level": 0.0,
+        "avg_fill_rate": 0.0,
+        "total_cost": 0.0,
+        "avg_daily_cost": 0.0,
+        "total_demand": 0.0,
+        "total_lost_sales": 0.0,
+        "avg_inventory": 0.0
+      }
+    },
+    {
+      "day": 4,
+      "stores": {
+        "store_1": {
+          "state": {
+            "store_id": "store_1",
+            "sku_id": "SKU_001",
+            "inventory": 426.5942602713276,
+            "forecast": 46.32674594404192,
+            "demand_std": 33.4466628421592,
+            "reorder_point": 170.6996868304618,
+            "safety_stock": 78.04619494237795,
+            "lead_time": 2,
+            "z_score": 1.65,
+            "days_of_cover": 14
+          },
+          "action": {
+            "order_quantity": 0,
+            "order_placed": false
+          }
+        },
+        "store_2": {
+          "state": {
+            "store_id": "store_2",
+            "sku_id": "SKU_001",
+            "inventory": 386.7014956187402,
+            "forecast": 39.94474854063972,
+            "demand_std": 24.940878328426525,
+            "reorder_point": 138.08784892405015,
+            "safety_stock": 58.198351842770705,
+            "lead_time": 2,
+            "z_score": 1.65,
+            "days_of_cover": 14
+          },
+          "action": {
+            "order_quantity": 0,
+            "order_placed": false
+          }
+        },
+        "store_3": {
+          "state": {
+            "store_id": "store_3",
+            "sku_id": "SKU_001",
+            "inventory": 557.456247629787,
+            "forecast": 69.44267111701177,
+            "demand_std": 42.161240259463014,
+            "reorder_point": 237.2665885733387,
+            "safety_stock": 98.38124633931518,
+            "lead_time": 2,
+            "z_score": 1.65,
+            "days_of_cover": 14
+          },
+          "action": {
+            "order_quantity": 0,
+            "order_placed": false
+          }
+        }
+      },
+      "warehouses": {
+        "warehouse_1": {
+          "state": {
+            "warehouse_id": "warehouse_1",
+            "sku_id": "SKU_001",
+            "inventory": 5000,
+            "in_transit": 0.0,
+            "backorders": 0.0,
+            "inventory_position": 5000.0,
+            "forecast": 155.7141656016934,
+            "demand_std": 97.01230225366773,
+            "reorder_point": 1593.073193930844,
+            "safety_stock": 503.07403471899005,
+            "lead_time": 7,
+            "z_score": 1.96,
+            "days_of_cover": 30
+          },
+          "action": {
+            "order_quantity": 0,
+            "order_placed": false
+          }
+        }
+      },
+      "outcomes": {
+        "actual_demand": 0.0,
+        "sales": 0,
+        "lost_sales": 0.0
+      },
+      "metrics": {
+        "total_days": 0,
+        "avg_service_level": 0.0,
+        "avg_fill_rate": 0.0,
+        "total_cost": 0.0,
+        "avg_daily_cost": 0.0,
+        "total_demand": 0.0,
+        "total_lost_sales": 0.0,
+        "avg_inventory": 0.0
+      }
+    },
+    {
+      "day": 5,
+      "stores": {
+        "store_1": {
+          "state": {
+            "store_id": "store_1",
+            "sku_id": "SKU_001",
+            "inventory": 364.387289970793,
+            "forecast": 54.68114794573448,
+            "demand_std": 34.26554443526613,
+            "reorder_point": 189.3193120345136,
+            "safety_stock": 79.95701614304464,
+            "lead_time": 2,
+            "z_score": 1.65,
+            "days_of_cover": 14
+          },
+          "action": {
+            "order_quantity": 0,
+            "order_placed": false
+          }
+        },
+        "store_2": {
+          "state": {
+            "store_id": "store_2",
+            "sku_id": "SKU_001",
+            "inventory": 309.60963812030684,
+            "forecast": 42.65970087625197,
+            "demand_std": 22.95913313200841,
+            "reorder_point": 138.89344555426996,
+            "safety_stock": 53.574043801766024,
+            "lead_time": 2,
+            "z_score": 1.65,
+            "days_of_cover": 14
+          },
+          "action": {
+            "order_quantity": 0,
+            "order_placed": false
+          }
+        },
+        "store_3": {
+          "state": {
+            "store_id": "store_3",
+            "sku_id": "SKU_001",
+            "inventory": 470.7166538195097,
+            "forecast": 68.50875047404263,
+            "demand_std": 37.75638985976264,
+            "reorder_point": 225.1202386478571,
+            "safety_stock": 88.10273769977184,
+            "lead_time": 2,
+            "z_score": 1.65,
+            "days_of_cover": 14
+          },
+          "action": {
+            "order_quantity": 0,
+            "order_placed": false
+          }
+        }
+      },
+      "warehouses": {
+        "warehouse_1": {
+          "state": {
+            "warehouse_id": "warehouse_1",
+            "sku_id": "SKU_001",
+            "inventory": 5000,
+            "in_transit": 0.0,
+            "backorders": 0.0,
+            "inventory_position": 5000.0,
+            "forecast": 165.84959929602908,
+            "demand_std": 89.10677581157725,
+            "reorder_point": 1623.025758171513,
+            "safety_stock": 462.07856309930935,
+            "lead_time": 7,
+            "z_score": 1.96,
+            "days_of_cover": 30
+          },
+          "action": {
+            "order_quantity": 0,
+            "order_placed": false
+          }
+        }
+      },
+      "outcomes": {
+        "actual_demand": 0.0,
+        "sales": 0,
+        "lost_sales": 0.0
+      },
+      "metrics": {
+        "total_days": 0,
+        "avg_service_level": 0.0,
+        "avg_fill_rate": 0.0,
+        "total_cost": 0.0,
+        "avg_daily_cost": 0.0,
+        "total_demand": 0.0,
+        "total_lost_sales": 0.0,
+        "avg_inventory": 0.0
+      }
+    },
+    {
+      "day": 6,
+      "stores": {
+        "store_1": {
+          "state": {
+            "store_id": "store_1",
+            "sku_id": "SKU_001",
+            "inventory": 304.2354488593023,
+            "forecast": 55.9354516715345,
+            "demand_std": 31.40550910355979,
+            "reorder_point": 185.15416324042084,
+            "safety_stock": 73.28325989735184,
+            "lead_time": 2,
+            "z_score": 1.65,
+            "days_of_cover": 14
+          },
+          "action": {
+            "order_quantity": 0,
+            "order_placed": false
+          }
+        },
+        "store_2": {
+          "state": {
+            "store_id": "store_2",
+            "sku_id": "SKU_001",
+            "inventory": 247.21804971368513,
+            "forecast": 48.39839364661554,
+            "demand_std": 24.575010384009754,
+            "reorder_point": 154.14140371109937,
+            "safety_stock": 57.344616417868295,
+            "lead_time": 2,
+            "z_score": 1.65,
+            "days_of_cover": 14
+          },
+          "action": {
+            "order_quantity": 0,
+            "order_placed": false
+          }
+        },
+        "store_3": {
+          "state": {
+            "store_id": "store_3",
+            "sku_id": "SKU_001",
+            "inventory": 371.45963362028886,
+            "forecast": 71.54722436341507,
+            "demand_std": 35.12998383030247,
+            "reorder_point": 225.06859303178624,
+            "safety_stock": 81.97414430495611,
+            "lead_time": 2,
+            "z_score": 1.65,
+            "days_of_cover": 14
+          },
+          "action": {
+            "order_quantity": 0,
+            "order_placed": false
+          }
+        }
+      },
+      "warehouses": {
+        "warehouse_1": {
+          "state": {
+            "warehouse_id": "warehouse_1",
+            "sku_id": "SKU_001",
+            "inventory": 5000,
+            "in_transit": 0.0,
+            "backorders": 0.0,
+            "inventory_position": 5000.0,
+            "forecast": 175.88106968156512,
+            "demand_std": 84.37910426615312,
+            "reorder_point": 1668.7298942186715,
+            "safety_stock": 437.56240644771566,
+            "lead_time": 7,
+            "z_score": 1.96,
+            "days_of_cover": 30
+          },
+          "action": {
+            "order_quantity": 0,
+            "order_placed": false
+          }
+        }
+      },
+      "outcomes": {
+        "actual_demand": 0.0,
+        "sales": 0,
+        "lost_sales": 0.0
+      },
+      "metrics": {
+        "total_days": 0,
+        "avg_service_level": 0.0,
+        "avg_fill_rate": 0.0,
+        "total_cost": 0.0,
+        "avg_daily_cost": 0.0,
+        "total_demand": 0.0,
+        "total_lost_sales": 0.0,
+        "avg_inventory": 0.0
+      }
+    },
+    {
+      "day": 7,
+      "stores": {
+        "store_1": {
+          "state": {
+            "store_id": "store_1",
+            "sku_id": "SKU_001",
+            "inventory": 232.0139822659849,
+            "forecast": 56.53779302009967,
+            "demand_std": 29.113262187852996,
+            "reorder_point": 181.00999692132544,
+            "safety_stock": 67.9344108811261,
+            "lead_time": 2,
+            "z_score": 1.65,
+            "days_of_cover": 14
+          },
+          "action": {
+            "order_quantity": 0,
+            "order_placed": false
+          }
+        },
+        "store_2": {
+          "state": {
+            "store_id": "store_2",
+            "sku_id": "SKU_001",
+            "inventory": 163.0374812657156,
+            "forecast": 50.39742146947356,
+            "demand_std": 23.272987180667705,
+            "reorder_point": 155.1012502168756,
+            "safety_stock": 54.30640727792849,
+            "lead_time": 2,
+            "z_score": 1.65,
+            "days_of_cover": 14
+          },
+          "action": {
+            "order_quantity": 0,
+            "order_placed": false
+          }
+        },
+        "store_3": {
+          "state": {
+            "store_id": "store_3",
+            "sku_id": "SKU_001",
+            "inventory": 240.32252748180355,
+            "forecast": 75.50576662567303,
+            "demand_std": 33.938677831960696,
+            "reorder_point": 230.20582174164645,
+            "safety_stock": 79.19428849030038,
+            "lead_time": 2,
+            "z_score": 1.65,
+            "days_of_cover": 14
+          },
+          "action": {
+            "order_quantity": 0,
+            "order_placed": false
+          }
+        }
+      },
+      "warehouses": {
+        "warehouse_1": {
+          "state": {
+            "warehouse_id": "warehouse_1",
+            "sku_id": "SKU_001",
+            "inventory": 5000,
+            "in_transit": 0.0,
+            "backorders": 0.0,
+            "inventory_position": 5000.0,
+            "forecast": 182.4409811152463,
+            "demand_std": 79.75530597422446,
+            "reorder_point": 1690.6717702842216,
+            "safety_stock": 413.58490247749745,
+            "lead_time": 7,
+            "z_score": 1.96,
+            "days_of_cover": 30
+          },
+          "action": {
+            "order_quantity": 0,
+            "order_placed": false
+          }
+        }
+      },
+      "outcomes": {
+        "actual_demand": 256.60270776890707,
+        "sales": 256.60270776890707,
+        "lost_sales": 0.0
+      },
+      "metrics": {
+        "total_days": 1,
+        "warmup_days": 7,
+        "avg_service_level": 1.0,
+        "min_service_level": 1.0,
+        "avg_fill_rate": 1.0,
+        "total_demand": 256.60270776890707,
+        "total_sales": 256.60270776890707,
+        "total_lost_sales": 0.0,
+        "lost_sales_rate": 0.0,
+        "total_cost": 2689.3856416222984,
+        "avg_daily_cost": 2689.3856416222984,
+        "total_holding_cost": 2689.3856416222984,
+        "total_stockout_penalty": 0.0,
+        "total_ordering_cost": 0.0,
+        "holding_cost_pct": 100.0,
+        "stockout_cost_pct": 0.0,
+        "ordering_cost_pct": 0.0,
+        "avg_inventory": 5378.771283244597,
+        "max_inventory": 5378.771283244597,
+        "min_inventory": 5378.771283244597,
+        "inventory_std": 0.0
+      }
+    },
+    {
+      "day": 8,
+      "stores": {
+        "store_1": {
+          "state": {
+            "store_id": "store_1",
+            "sku_id": "SKU_001",
+            "inventory": 150.94186406195092,
+            "forecast": 66.85514539057358,
+            "demand_std": 17.87814109920927,
+            "reorder_point": 175.42808164180778,
+            "safety_stock": 41.717790860660614,
+            "lead_time": 2,
+            "z_score": 1.65,
+            "days_of_cover": 14
+          },
+          "action": {
+            "order_quantity": 785.0301714060793,
+            "order_placed": 
