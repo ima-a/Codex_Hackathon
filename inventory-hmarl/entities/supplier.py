@@ -139,7 +139,7 @@ class Supplier:
             'name': self.name,
             'lead_time': self.lead_time,
             'reliability': self.reliability,
-            'pending_orders': len(self.pending_orders),
+            'pending_orders': list(self.pending_orders),
             'total_orders_received': self.total_orders_received,
             'total_orders_fulfilled': self.total_orders_fulfilled
         }
