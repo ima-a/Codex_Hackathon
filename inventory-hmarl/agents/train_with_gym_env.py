@@ -101,7 +101,7 @@ def train_multi_agent_ppo(num_episodes=20, num_steps=30, verbose=True):
             print(f"{'='*60}")
         
         # Reset environment
-        observations = env.reset()
+        observations, _ = env.reset()
         
         # Experience buffer for this episode
         episode_experiences = []
@@ -125,7 +125,8 @@ def train_multi_agent_ppo(num_episodes=20, num_steps=30, verbose=True):
                 actions[agent_id] = action
             
             # Step environment
-            next_observations, rewards, done, info = env.step(actions)
+            next_observations, rewards, terminated, truncated, info = env.step(actions)
+            done = terminated or truncated
             
             # Store experiences for store agents
             for agent_id in store_agent_ids:
@@ -231,7 +232,7 @@ def evaluate_trained_policy(ppo_trainer, num_episodes=5, num_steps=30):
     eval_stats = []
     
     for episode in range(num_episodes):
-        observations = env.reset()
+        observations, _ = env.reset()
         episode_rewards = {aid: [] for aid in env.agent_ids}
         
         for step in range(num_steps):
@@ -248,7 +249,8 @@ def evaluate_trained_policy(ppo_trainer, num_episodes=5, num_steps=30):
                 
                 actions[agent_id] = action
             
-            next_observations, rewards, done, info = env.step(actions)
+            next_observations, rewards, terminated, truncated, info = env.step(actions)
+            done = terminated or truncated
             
             for agent_id in env.agent_ids:
                 episode_rewards[agent_id].append(rewards[agent_id])
@@ -278,9 +280,9 @@ def evaluate_trained_policy(ppo_trainer, num_episodes=5, num_steps=30):
 
 def main():
     """Main training and evaluation."""
-    # Train
+    # Train - Full Phase-1 training (10,000 timesteps)
     ppo_trainer, training_stats = train_multi_agent_ppo(
-        num_episodes=20,
+        num_episodes=334,  # 334 episodes × 30 steps = 10,020 timesteps
         num_steps=30,
         verbose=True
     )

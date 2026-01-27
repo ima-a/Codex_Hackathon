@@ -62,7 +62,7 @@ class EnvironmentValidator:
         print("="*60)
         
         try:
-            observations = self.env.reset()
+            observations, _ = self.env.reset()
             
             # Check all agents have observations
             expected_agents = set(self.env.agent_ids)
@@ -128,7 +128,7 @@ class EnvironmentValidator:
         print("="*60)
         
         try:
-            observations = self.env.reset()
+            observations, _ = self.env.reset()
             
             all_rewards = {agent_id: [] for agent_id in self.env.agent_ids}
             all_observations = {agent_id: [] for agent_id in self.env.agent_ids}
@@ -140,7 +140,8 @@ class EnvironmentValidator:
                     actions[agent_id] = self.env.action_space[agent_id].sample()
                 
                 # Execute step
-                next_observations, rewards, done, info = self.env.step(actions)
+                next_observations, rewards, terminated, truncated, info = self.env.step(actions)
+                done = terminated or truncated
                 
                 # Validate returns
                 if not isinstance(next_observations, dict):
@@ -244,14 +245,15 @@ class EnvironmentValidator:
         print("="*60)
         
         try:
-            observations = self.env.reset()
+            observations, _ = self.env.reset()
             
             # Run a few steps and collect reconciliation data
             reconciliation_data = []
             
             for step in range(5):
                 actions = {aid: self.env.action_space[aid].sample() for aid in self.env.agent_ids}
-                next_observations, rewards, done, info = self.env.step(actions)
+                next_observations, rewards, terminated, truncated, info = self.env.step(actions)
+                done = terminated or truncated
                 
                 if 'reconciliation' in info:
                     reconciliation_data.append(info['reconciliation'])
@@ -336,7 +338,7 @@ class EnvironmentValidator:
                     actions = {aid: 0 for aid in self.env.agent_ids}
                     actions[agent_id] = action
                     
-                    _, rewards, _, _ = self.env.step(actions)
+                    _, rewards, _, _, _ = self.env.step(actions)
                     action_rewards[action] = rewards[agent_id]
                     
                     print(f"  Action {action}: reward = {rewards[agent_id]:.2f}")

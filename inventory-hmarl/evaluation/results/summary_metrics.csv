@@ -1,0 +1,3 @@
+policy,avg_episode_reward,std_episode_reward,avg_service_level,std_service_level,avg_stockouts,total_stockouts,avg_holding_cost,avg_lost_sales,avg_inventory
+Baseline (Rule-based),600.0,0.0,1.0,0.0,0.0,0,0.0,0.0,0.0
+PPO (Trained),600.0,0.0,1.0,0.0,0.0,0,0.0,0.0,0.0

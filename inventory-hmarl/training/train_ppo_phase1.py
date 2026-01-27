@@ -210,9 +210,6 @@ class PPOTrainerPhase1:
         # Wrap for single-agent training
         single_env = SingleAgentWrapper(multi_env, agent_id=agent_id)
         
-        # Wrap with Monitor for logging
-        single_env = Monitor(single_env)
-        
         return single_env
     
     def train(self):
@@ -250,8 +247,7 @@ class PPOTrainerPhase1:
         self.model = PPO(
             "MlpPolicy",
             self.env,
-            **self.ppo_params,
-            tensorboard_log=os.path.join(self.output_dir, 'tensorboard')
+            **self.ppo_params
         )
         
         print(f"\nModel architecture:")
@@ -266,8 +262,7 @@ class PPOTrainerPhase1:
         
         self.model.learn(
             total_timesteps=self.total_timesteps,
-            callback=self.metrics_callback,
-            progress_bar=True
+            callback=self.metrics_callback
         )
         
         training_duration = (datetime.now() - self.training_start_time).total_seconds()

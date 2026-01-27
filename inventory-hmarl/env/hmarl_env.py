@@ -16,8 +16,8 @@ Supports:
 - Compatible with standard RL libraries (Stable-Baselines3, RLlib, etc.)
 """
 
-import gym
-from gym import spaces
+import gymnasium as gym
+from gymnasium import spaces
 import numpy as np
 from typing import Dict, Any, Tuple, List, Optional
 import sys
@@ -160,12 +160,12 @@ class HMARLEnvironment(gym.Env):
         
         return spaces.Dict(action_spaces)
     
-    def reset(self) -> Dict[str, np.ndarray]:
+    def reset(self, **kwargs) -> Tuple[Dict[str, np.ndarray], Dict]:
         """
         Reset environment to initial state.
         
         Returns:
-            Dict of agent_id -> initial observation
+            Tuple of (observations, info)
         """
         # Reset digital twin
         self.current_state = self.digital_twin.reset()
@@ -186,12 +186,13 @@ class HMARLEnvironment(gym.Env):
         # Get initial observations
         observations = self._get_observations()
         
-        return observations
+        # Return observations and empty info dict
+        return observations, {}
     
     def step(
         self,
         actions: Dict[str, int]
-    ) -> Tuple[Dict[str, np.ndarray], Dict[str, float], bool, Dict[str, Any]]:
+    ) -> Tuple[Dict[str, np.ndarray], Dict[str, float], bool, bool, Dict[str, Any]]:
         """
         Execute one step in the environment.
         
@@ -199,7 +200,7 @@ class HMARLEnvironment(gym.Env):
             actions: Dict of agent_id -> action
         
         Returns:
-            Tuple of (observations, rewards, done, info)
+            Tuple of (observations, rewards, terminated, truncated, info)
         """
         # Store actions
         self.last_actions = actions
@@ -231,7 +232,8 @@ class HMARLEnvironment(gym.Env):
         self.current_step += 1
         
         # Check if episode is done
-        done = self.current_step >= self.max_steps
+        terminated = self.current_step >= self.max_steps
+        truncated = False  # We don't use truncation
         
         # Get next observations
         observations = self._get_observations()
@@ -239,7 +241,7 @@ class HMARLEnvironment(gym.Env):
         # Build info dict
         info = self._build_info(reconciliation_reports)
         
-        return observations, rewards, done, info
+        return observations, rewards, terminated, truncated, info
     
     def _get_observations(self) -> Dict[str, np.ndarray]:
         """
@@ -462,12 +464,12 @@ class SingleAgentWrapper(gym.Env):
         self.observation_space = multi_agent_env.observation_space[agent_id]
         self.action_space = multi_agent_env.action_space[agent_id]
     
-    def reset(self) -> np.ndarray:
-        """Reset and return single agent's observation."""
-        multi_obs = self.env.reset()
-        return multi_obs[self.agent_id]
+    def reset(self, **kwargs) -> Tuple[np.ndarray, Dict]:
+        """Reset and return single agent's observation and info."""
+        multi_obs, info = self.env.reset()
+        return multi_obs[self.agent_id], info
     
-    def step(self, action: int) -> Tuple[np.ndarray, float, bool, Dict]:
+    def step(self, action: int) -> Tuple[np.ndarray, float, bool, bool, Dict]:
         """
         Step with single agent's action.
         
@@ -487,13 +489,13 @@ class SingleAgentWrapper(gym.Env):
                     actions[agent_id] = 0
         
         # Step environment
-        multi_obs, multi_rewards, done, info = self.env.step(actions)
+        multi_obs, multi_rewards, terminated, truncated, info = self.env.step(actions)
         
         # Extract single agent's data
         obs = multi_obs[self.agent_id]
         reward = multi_rewards[self.agent_id]
         
-        return obs, reward, done, info
+        return obs, reward, terminated, truncated, info
     
     def render(self, mode='human'):
         """Delegate to multi-agent environment."""
